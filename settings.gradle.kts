@@ -16,3 +16,6 @@ dependencyResolutionManagement {
 rootProject.name = "kmm-sample"
 include(":androidApp")
 include(":shared")
+include(":data")
+include(":feature")
+include(":domain")

@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization") version "1.8.20"
     id("com.android.library")
+    id("com.google.devtools.ksp") version "1.8.0-1.0.8"
 }
 
 kotlin {
@@ -26,8 +27,11 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation(project(":data"))
+                implementation(project(":domain"))
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+                implementation("de.jensklingenberg.ktorfit:ktorfit-lib:1.0.1")
             }
         }
         val commonTest by getting {

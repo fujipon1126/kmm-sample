@@ -1,6 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id("com.google.devtools.ksp") version "1.8.0-1.0.8"
 }
 
 kotlin {
@@ -26,6 +27,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+                implementation("de.jensklingenberg.ktorfit:ktorfit-lib:1.0.1")
             }
         }
         val commonTest by getting {

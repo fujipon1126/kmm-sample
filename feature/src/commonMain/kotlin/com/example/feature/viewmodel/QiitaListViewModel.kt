@@ -29,6 +29,7 @@ class QiitaListViewModel(
                 _uiState.update {
                     it.copy(
                         isLoading = false,
+                        isSuccess = true,
                         qiitaList = result
                     )
                 }

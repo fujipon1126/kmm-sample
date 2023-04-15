@@ -1,22 +1,19 @@
 package com.example.data.repository
 
+import com.example.data.datasource.QiitaListRemoteDataSource
+import com.example.data.response.QiitaListResponseDataItem
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
-class QiitaListRepository {
+class QiitaListRepository(
+    private val remoteDataSource: QiitaListRemoteDataSource
+) {
 
-//    fun fetchQiitaList(
-//        page: Int,
-//        query: String?
-//    ): Flow<List<QiitaListDomainData>> {
-//        return remoteDataSource.fetchQiitaList(
-//            page = page,
-//            query = query
-//        ).map { response ->
-//            response.map {
-//                QiitaListDomainData(
-//                    title = it.title
-//                )
-//            }
-//        }
-//    }
+    fun fetchQiitaList(
+        page: Int
+    ): Flow<List<QiitaListResponseDataItem>> {
+        return remoteDataSource.fetchQiitaList(
+            page = page
+        )
+    }
 }

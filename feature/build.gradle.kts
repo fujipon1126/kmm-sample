@@ -33,11 +33,12 @@ kotlin {
                 implementation("dev.icerock.moko:mvvm-flow-resources:0.16.0")
                 implementation("dev.icerock.moko:mvvm-flow-compose:0.16.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-                implementation("androidx.compose.ui:ui:1.3.1")
-                implementation("androidx.compose.ui:ui-tooling:1.3.1")
-                implementation("androidx.compose.ui:ui-tooling-preview:1.3.1")
-                implementation("androidx.compose.foundation:foundation-layout:1.3.1")
-                implementation("androidx.compose.material3:material3:1.1.0-beta02")
+//                implementation("androidx.compose.ui:ui:1.3.1")
+//                implementation("androidx.compose.ui:ui-tooling:1.3.1")
+//                implementation("androidx.compose.ui:ui-tooling-preview:1.3.1")
+//                implementation("androidx.compose.foundation:foundation-layout:1.3.1")
+//                implementation("androidx.compose.material3:material3:1.1.0-beta02")
+                implementation("io.insert-koin:koin-core:3.4.0")
             }
         }
         val commonTest by getting {
@@ -47,11 +48,12 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-//                implementation("androidx.compose.ui:ui:1.3.1")
-//                implementation("androidx.compose.ui:ui-tooling:1.3.1")
-//                implementation("androidx.compose.ui:ui-tooling-preview:1.3.1")
-//                implementation("androidx.compose.foundation:foundation-layout:1.3.1")
-//                implementation("androidx.compose.material3:material3:1.1.0-beta02")
+                implementation("io.insert-koin:koin-android:3.4.0")
+                implementation("androidx.compose.ui:ui:1.3.1")
+                implementation("androidx.compose.ui:ui-tooling:1.3.1")
+                implementation("androidx.compose.ui:ui-tooling-preview:1.3.1")
+                implementation("androidx.compose.foundation:foundation-layout:1.3.1")
+                implementation("androidx.compose.material3:material3:1.1.0-beta02")
             }
         }
         val androidUnitTest by getting

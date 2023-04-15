@@ -2,6 +2,8 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("com.google.devtools.ksp") version "1.8.0-1.0.8"
+    id("de.jensklingenberg.ktorfit") version "1.0.0"
+    kotlin("plugin.serialization") version "1.8.0"
 }
 
 kotlin {
@@ -28,6 +30,11 @@ kotlin {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
                 implementation("de.jensklingenberg.ktorfit:ktorfit-lib:1.0.1")
+                implementation("io.insert-koin:koin-core:3.4.0")
+                implementation("io.ktor:ktor-client-content-negotiation:2.1.3")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:2.1.3")
+                implementation("io.ktor:ktor-client-logging:2.1.3")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
             }
         }
         val commonTest by getting {
@@ -65,4 +72,9 @@ android {
         minSdk = 26
         targetSdk = 33
     }
+}
+
+dependencies {
+    add("kspCommonMainMetadata", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
+    add("kspAndroid", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
 }

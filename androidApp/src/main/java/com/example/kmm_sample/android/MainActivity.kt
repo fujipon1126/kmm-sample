@@ -12,7 +12,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.feature.QiitaListScreen
+import com.example.feature.viewmodel.QiitaListViewModel
 import com.example.kmm_sample.Greeting
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +29,9 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(navController = navController, startDestination = "qiita") {
                         composable("qiita") {
-                            QiitaListScreen()
+                            QiitaListScreen(
+                                viewModel = getViewModel()
+                            )
                         }
                     }
                 }

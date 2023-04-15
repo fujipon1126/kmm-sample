@@ -29,9 +29,13 @@ kotlin {
             dependencies {
                 implementation(project(":data"))
                 implementation(project(":domain"))
+                implementation(project(":feature"))
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
                 implementation("de.jensklingenberg.ktorfit:ktorfit-lib:1.0.1")
+                implementation("io.insert-koin:koin-core:3.4.0")
+                api("dev.icerock.moko:mvvm-core:0.16.0")
+                api("dev.icerock.moko:mvvm-flow:0.16.0")
             }
         }
         val commonTest by getting {

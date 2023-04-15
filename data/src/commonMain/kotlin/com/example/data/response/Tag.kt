@@ -1,6 +1,12 @@
 package com.example.data.response
 
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Tag(
+    @SerialName("name")
     val name: String,
-    val versions: List<Any>
+    @SerialName("versions")
+    val versions: List<String?>
 )

@@ -4,6 +4,7 @@ plugins {
     id("com.google.devtools.ksp") version "1.8.0-1.0.8"
     id("de.jensklingenberg.ktorfit") version "1.0.0"
     kotlin("plugin.serialization") version "1.8.0"
+    kotlin("native.cocoapods")
 }
 
 kotlin {
@@ -12,6 +13,16 @@ kotlin {
             kotlinOptions {
                 jvmTarget = "1.8"
             }
+        }
+    }
+
+    cocoapods {
+        summary = "Some description for the Shared Module"
+        homepage = "Link to the Shared Module homepage"
+        version = "1.0"
+        ios.deploymentTarget = "14.1"
+        framework {
+            baseName = "data"
         }
     }
     
@@ -77,4 +88,7 @@ android {
 dependencies {
     add("kspCommonMainMetadata", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
     add("kspAndroid", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
+    add("kspIosX64", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
+    add("kspIosArm64", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
+    add("kspIosSimulatorArm64", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
 }

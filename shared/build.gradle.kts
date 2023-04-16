@@ -3,6 +3,7 @@ plugins {
     kotlin("plugin.serialization") version "1.8.20"
     id("com.android.library")
     id("com.google.devtools.ksp") version "1.8.0-1.0.8"
+    kotlin("native.cocoapods")
 }
 
 kotlin {
@@ -11,6 +12,16 @@ kotlin {
             kotlinOptions {
                 jvmTarget = "1.8"
             }
+        }
+    }
+
+    cocoapods {
+        summary = "Some description for the Shared Module"
+        homepage = "Link to the Shared Module homepage"
+        version = "1.0"
+        ios.deploymentTarget = "14.1"
+        framework {
+            baseName = "shared"
         }
     }
     

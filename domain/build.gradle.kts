@@ -38,7 +38,7 @@ kotlin {
             dependencies {
                 implementation(project(":data"))
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-                implementation("io.insert-koin:koin-core:3.4.0")
+                implementation("io.insert-koin:koin-core:3.2.2")
             }
         }
         val commonTest by getting {

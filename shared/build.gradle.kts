@@ -1,8 +1,8 @@
 plugins {
     kotlin("multiplatform")
-    kotlin("plugin.serialization") version "1.8.20"
+    kotlin("plugin.serialization") version "1.8.10"
     id("com.android.library")
-    id("com.google.devtools.ksp") version "1.8.0-1.0.8"
+    id("com.google.devtools.ksp") version "1.8.10-1.0.9"
     kotlin("native.cocoapods")
 }
 
@@ -20,8 +20,11 @@ kotlin {
         homepage = "Link to the Shared Module homepage"
         version = "1.0"
         ios.deploymentTarget = "14.1"
+//        podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "shared"
+//            export("dev.icerock.moko:mvvm-core:0.16.0")
+//            export("dev.icerock.moko:mvvm-flow:0.16.0")
         }
     }
     
@@ -43,10 +46,10 @@ kotlin {
                 implementation(project(":feature"))
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-                implementation("de.jensklingenberg.ktorfit:ktorfit-lib:1.0.1")
-                implementation("io.insert-koin:koin-core:3.4.0")
-                api("dev.icerock.moko:mvvm-core:0.16.0")
-                api("dev.icerock.moko:mvvm-flow:0.16.0")
+                implementation("de.jensklingenberg.ktorfit:ktorfit-lib:1.0.0")
+                implementation("io.insert-koin:koin-core:3.2.2")
+                api("dev.icerock.moko:mvvm-core:0.14.0")
+                api("dev.icerock.moko:mvvm-flow:0.14.0")
             }
         }
         val commonTest by getting {

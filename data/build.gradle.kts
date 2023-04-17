@@ -1,9 +1,9 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("com.google.devtools.ksp") version "1.8.0-1.0.8"
+    id("com.google.devtools.ksp") version "1.8.10-1.0.9"
     id("de.jensklingenberg.ktorfit") version "1.0.0"
-    kotlin("plugin.serialization") version "1.8.0"
+    kotlin("plugin.serialization") version "1.8.10"
     kotlin("native.cocoapods")
 }
 
@@ -40,8 +40,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-                implementation("de.jensklingenberg.ktorfit:ktorfit-lib:1.0.1")
-                implementation("io.insert-koin:koin-core:3.4.0")
+                implementation("de.jensklingenberg.ktorfit:ktorfit-lib:1.0.0")
+                implementation("io.insert-koin:koin-core:3.2.2")
                 implementation("io.ktor:ktor-client-content-negotiation:2.1.3")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:2.1.3")
                 implementation("io.ktor:ktor-client-logging:2.1.3")
@@ -86,9 +86,9 @@ android {
 }
 
 dependencies {
-    add("kspCommonMainMetadata", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
-    add("kspAndroid", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
-    add("kspIosX64", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
-    add("kspIosArm64", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
-    add("kspIosSimulatorArm64", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.1")
+    add("kspCommonMainMetadata", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.0")
+    add("kspAndroid", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.0")
+    add("kspIosX64", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.0")
+    add("kspIosArm64", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.0")
+    add("kspIosSimulatorArm64", "de.jensklingenberg.ktorfit:ktorfit-ksp:1.0.0")
 }
